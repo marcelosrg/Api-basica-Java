@@ -1,22 +1,28 @@
 package com.marcelo.api_basica.Model;
-
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 //POJO -> Plain Old Java Object
+@Entity
+@Table(name = "Produtos")
 public class Produto {
+
+    @Id
+    @Column(name = "id")
     private String Id;
+
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "descricao")
     private String descricao;
+
+    @Column(name = "preco")
     private double preco;
 
-    @Override
-    public String toString() {
-        return "Produto{" +
-                "Id='" + Id + '\'' +
-                ", nome='" + nome + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", preco=" + preco +
-                '}';
-    }
+
 
     public String getId() {
         return Id;
